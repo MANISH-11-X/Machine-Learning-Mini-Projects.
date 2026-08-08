@@ -1,0 +1,23 @@
+
+#Loan Approval Predictor Using Decision Tree
+from sklearn.tree import DecisionTreeClassifier
+import numpy as np
+
+X =  np.array([
+    [22,25000,550,300000], #Age , Income , credit Score , Loan Amount
+    [28,40000,650,400000], 
+    [34,45000,580,200000],
+    [40,50000,720,500000],
+    [46,70000,600,300000],
+    [52,80000,700,600000],
+])
+
+y = np.array(['Rejected','Approved','Rejected','Approved','Approved','Approved'])
+
+model = DecisionTreeClassifier()
+
+model.fit(X , y)
+
+prediction = model.predict([[42,55000,700,400000]])
+
+print(prediction) #['Approved']
