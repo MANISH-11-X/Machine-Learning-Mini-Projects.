@@ -1,0 +1,14 @@
+#House Price Prediction
+from sklearn.linear_model import LinearRegression
+import numpy as np
+
+X = np.array([[500],[700],[900],[1100],[1300],[1500]]) #Area(sq ft)
+y = np.array([20,28,36,44,52,60]) #Price in Lakhs
+
+model = LinearRegression()
+
+model.fit(X , y)
+
+prediction = model.predict([[1200]])
+
+print(prediction) #[48.]
