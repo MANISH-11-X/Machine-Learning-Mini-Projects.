@@ -1,0 +1,23 @@
+#Student Performance Predictor
+from sklearn.linear_model import LinearRegression
+import numpy as np
+
+X = np.array([
+    [1,60,50], #Study hours , Attendance , Assignment Score
+    [2,65,55],
+    [3,70,60],
+    [4,75,65],
+    [5,80,70],
+    [6,85,75],
+    [7,90,80],
+])
+
+y = np.array([45,50,58,65,72,80,88]) #Exam Score
+
+model = LinearRegression()
+
+model.fit(X , y)
+
+prediction = model.predict([[8,95,85]])
+
+print(prediction) #[94.42857143]
